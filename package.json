@@ -1,0 +1,41 @@
+{
+  "name": "zaqar-renderer-mustache",
+  "version": "1.0.0",
+  "description": "Mustache renderer for Zaqar email microservice",
+  "main": "dist/index.js",
+  "scripts": {
+    "pretest": "npm run build",
+    "prepare": "rm -rf dist && npm run build && npm test",
+    "test": "mocha ./tests",
+    "build": "tsc",
+    "coverage": "nyc --check-coverage --per-file --reporter=lcov --reporter=text --reporter-dir ./coverage --clean --cache --instrument mocha ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaosdoctor/zaqar-renderer-mustache.git"
+  },
+  "keywords": [
+    "zaqar",
+    "email",
+    "mustache",
+    "renderer",
+    "microservice"
+  ],
+  "author": "Lucas Santos <hello@lsantos.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khaosdoctor/zaqar-renderer-mustache/issues"
+  },
+  "homepage": "https://github.com/khaosdoctor/zaqar-renderer-mustache#readme",
+  "devDependencies": {
+    "@types/node": "^12.12.12",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "mustache": "^3.1.0"
+  },
+  "files": ["dist"],
+  "private": false
+}

@@ -8,11 +8,27 @@
     "prepare": "rm -rf dist && npm run build && npm test",
     "test": "mocha ./tests",
     "build": "tsc",
-    "coverage": "nyc --check-coverage --per-file --reporter=lcov --reporter=text --reporter-dir ./coverage --clean --cache --instrument mocha ./tests"
+    "coverage": "nyc mocha --timeout 10000 --require source-map-support/register --recursive tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khaosdoctor/zaqar-renderer-mustache.git"
+  },
+  "nyc": {
+    "extension": [
+      ".js"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "dist/**/*.*",
+      "coverage"
+    ],
+    "reporter": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "all": true
   },
   "keywords": [
     "zaqar",
@@ -31,11 +47,14 @@
     "@types/node": "^12.12.12",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
+    "source-map-support": "^0.5.16",
     "typescript": "^3.7.2"
   },
   "dependencies": {
     "mustache": "^3.1.0"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "private": false
 }

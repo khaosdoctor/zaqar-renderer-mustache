@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/khaosdoctor/zaqar-renderer-mustache.svg?branch=master)](https://travis-ci.org/khaosdoctor/zaqar-renderer-mustache)
 
-Mustache renderer for Zaqar email microservice
+Mustache renderer for [Zaqar](https://github.com/khaosdoctor/zaqar) email microservice
 
 > **lang:** mustache
 

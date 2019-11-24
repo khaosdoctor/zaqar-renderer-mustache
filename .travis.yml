@@ -20,7 +20,7 @@ jobs:
         provider: npm
         email: $NPM_EMAIL_ADDR
         api_key: $NPM_API_KEY
-        cleanup: false
+        skip_cleanup: true
         on:
           tags: true
           branch: master

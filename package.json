@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "pretest": "npm run build",
-    "prepare": "rm -rf dist && npm run build && npm test",
+    "prepare": "rm -rf dist && npm test",
     "test": "mocha ./tests",
     "build": "tsc",
     "coverage": "nyc mocha --timeout 10000 --require source-map-support/register --recursive tests/**/*.test.js"
@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/khaosdoctor/zaqar-renderer-mustache#readme",
   "devDependencies": {
+    "@types/mustache": "^0.8.32",
     "@types/node": "^12.12.12",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
